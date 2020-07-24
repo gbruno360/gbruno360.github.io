@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Modal</title>
+  <!--<link href="styles.css" rel="stylesheet">-->
+  <script defer src="script-ONM.js"></script>
+</head>
+<body>
+  <button data-modal-target="#modal" style = "display: none;">Open Modal</button>
+  <div class="modal" id="modal">
+    <div class="modal-header-ONM">
+      <div class="title-ONM"> </div>
+      <img id="logotipo-ONM" src="https://onovomercado.com.br/wp-content/themes/o-novo-mercado/img/logotipo.png">
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body-ONM">
+      <h1>Estamos em uma<br>nova plataforma!</h1>
+      <a href="#">Saiba mais</a>
+    </div>
+  </div>
+  <div id="overlay"></div>
+  <style>
+    *, *::after, *::before {
+  box-sizing: border-box;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid #E0004D;
+  border-radius: 25px;
+  z-index: 10;
+  background-color: #041E42;
+  width: 400px;
+  max-width: 80%;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header-ONM {
+  padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #E0004D;
+    font-family: 'Open Sans', sans-serif;
+    color: #FFF;
+}
+
+.modal-header-ONM .title-ONM {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-header-ONM .close-button {
+  cursor: pointer;
+  border: 1px solid white;
+  border-radius: 13px;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #FFF;
+}
+.modal-header-ONM #logotipo-ONM {
+  padding: 20px;
+  /*width: 80%;*/
+}
+
+.modal-body-ONM {
+  padding: 20px 0px 35px 0px;
+  color: #FFF;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+.modal-body-ONM h1 {
+  margin: 0px 0px 30px 0px;
+}
+
+.modal-body-ONM a {
+  padding: 15px;
+  border-radius: 25px;
+  border: none;
+  background: #E0004D;
+  color: #FFF;
+  font-weight: bold;
+  margin: 15px 0 15px 0;
+  text-decoration: none;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+@media only screen and (max-width: 600px) {
+  .modal-header-ONM #logotipo-ONM {
+  padding: 20px;
+  width: 80%;
+  }
+}
+@media only screen and (max-width: 370px) {
+  .modal-body-ONM h1 {
+    font-size: 1.4rem;
+  }
+}
+  </style>
+</body>
+</html>
