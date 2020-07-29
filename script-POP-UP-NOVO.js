@@ -1,4 +1,4 @@
-setTimeout(abrepopup(), 5000);
+setTimeout(abrepopup(), 3000);
 
 function abrepopup() {
     xvarONM = document.getElementById("popupONM");
