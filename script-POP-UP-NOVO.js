@@ -13,8 +13,3 @@ function fechapopup() {
         xpopupONM.style.display = "none";
     }
   }
-
-
-
-
-  onclick="fechapopup()"
