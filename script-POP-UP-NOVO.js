@@ -12,5 +12,3 @@
         }
         }
         console.log = 'funcionou';
-
-setTimeout(abrepopup(), 3000);
